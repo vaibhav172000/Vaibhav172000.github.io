@@ -1,639 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaibhav Kakde | Business Analyst | CRM Specialist</title>
-  <meta name="description" content="Business Analyst with 2+ years at ICICI Bank specializing in CRM transformation, automation, and process optimization">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="https://img.icons8.com/fluency/48/000000/resume.png" type="image/x-icon">
-  
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vaibhav Kakde | Business Analyst | Digital Transformation Expert</title>
   <style>
-    :root {
-      --primary: #4361ee;
-      --primary-dark: #3a0ca3;
-      --secondary: #f72585;
-      --dark: #212529;
-      --light: #f8f9fa;
-      --gray: #6c757d;
-      --light-gray: #e9ecef;
-      --success: #4cc9f0;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background-color: var(--light);
-      color: var(--dark);
-      transition: var(--transition);
-      overflow-x: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 30px;
+      color: #2d3748;
+      line-height: 1.5;
+      background-color: #f8fafc;
     }
-
-    body.dark-mode {
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-
-    ::selection {
-      background: var(--primary);
+    .header {
+      background-color: #1a365d;
       color: white;
-    }
-
-    /* Header & Navigation */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transition: var(--transition);
-    }
-
-    body.dark-mode header {
-      background: rgba(30, 30, 30, 0.95);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--primary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    body.dark-mode .logo {
-      color: var(--success);
-    }
-
-    .logo i {
-      font-size: 1.8rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    body.dark-mode .nav-links a {
-      color: #f0f0f0;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
-    }
-
-    body.dark-mode .nav-links a::after {
-      background: var(--success);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--dark);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    body.dark-mode .mobile-menu-btn {
-      color: #f0f0f0;
-    }
-
-    .toggle-mode {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.5rem;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-
-    .toggle-mode:hover {
-      background: var(--primary-dark);
-      transform: rotate(30deg);
-    }
-
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 8rem 2rem 4rem;
-      background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-    }
-
-    body.dark-mode .hero {
-      background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(30, 30, 30, 0) 100%);
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .hero-content h1 span {
-      color: var(--primary);
-    }
-
-    body.dark-mode .hero-content h1 span {
-      color: var(--success);
-    }
-
-    .hero-content .title {
-      font-size: 1.5rem;
-      color: var(--secondary);
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-    }
-
-    .hero-content p {
-      margin-bottom: 2rem;
-      color: var(--gray);
-      max-width: 500px;
-    }
-
-    body.dark-mode .hero-content p {
-      color: #bbb;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .btn {
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: var(--transition);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(67, 97, 238, 0.2);
-    }
-
-    .btn-outline {
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-
-    body.dark-mode .btn-outline {
-      color: var(--success);
-      border-color: var(--success);
-    }
-
-    .btn-outline:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-3px);
-    }
-
-    body.dark-mode .btn-outline:hover {
-      background: var(--success);
-      border-color: var(--success);
-    }
-
-    .hero-image {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-pattern {
-      position: absolute;
-      top: -20px;
-      right: -20px;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="25" cy="25" r="3" fill="%234361ee" opacity="0.5"/><circle cx="75" cy="75" r="3" fill="%234361ee" opacity="0.5"/><circle cx="75" cy="25" r="3" fill="%234361ee" opacity="0.5"/><circle cx="25" cy="75" r="3" fill="%234361ee" opacity="0.5"/></svg>');
-      z-index: -1;
-      border-radius: 20px;
-      opacity: 0.6;
-    }
-
-    body.dark-mode .hero-pattern {
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="25" cy="25" r="3" fill="%234cc9f0" opacity="0.5"/><circle cx="75" cy="75" r="3" fill="%234cc9f0" opacity="0.5"/><circle cx="75" cy="25" r="3" fill="%234cc9f0" opacity="0.5"/><circle cx="25" cy="75" r="3" fill="%234cc9f0" opacity="0.5"/></svg>');
-    }
-
-    /* Main Content Sections */
-    .section {
-      padding: 6rem 2rem;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-title h2 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    body.dark-mode .section-title h2 {
-      color: var(--success);
-    }
-
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--secondary);
-      border-radius: 2px;
-    }
-
-    .section-title p {
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    body.dark-mode .section-title p {
-      color: #bbb;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* About Section */
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .about-text p {
-      margin-bottom: 1.5rem;
-      color: var(--gray);
-    }
-
-    body.dark-mode .about-text p {
-      color: #bbb;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .stat-item {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      text-align: center;
-      transition: var(--transition);
-    }
-
-    body.dark-mode .stat-item {
-      background: #252525;
-    }
-
-    .stat-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .stat-item h3 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    body.dark-mode .stat-item h3 {
-      color: var(--success);
-    }
-
-    .stat-item p {
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-
-    /* Experience Section */
-    .timeline {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-      padding-left: 100px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50px;
-      top: 0;
-      height: 100%;
-      width: 2px;
-      background: var(--primary);
-    }
-
-    body.dark-mode .timeline::before {
-      background: var(--success);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3rem;
-      padding: 2rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    body.dark-mode .timeline-item {
-      background: #252525;
-    }
-
-    .timeline-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -40px;
-      top: 40px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--primary);
-      border: 4px solid white;
-    }
-
-    body.dark-mode .timeline-item::before {
-      background: var(--success);
-      border-color: #252525;
-    }
-
-    .timeline-date {
-      position: absolute;
-      left: -100px;
-      top: 40px;
-      width: 80px;
-      text-align: right;
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-
-    .timeline-content h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
-
-    body.dark-mode .timeline-content h3 {
-      color: var(--success);
-    }
-
-    .timeline-content h4 {
-      font-size: 1rem;
-      color: var(--secondary);
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    .timeline-content ul {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .timeline-content li {
-      margin-bottom: 0.5rem;
-      color: var(--gray);
-    }
-
-    body.dark-mode .timeline-content li {
-      color: #bbb;
-    }
-
-    .tag-container {
+      padding: 25px;
+      margin: -30px -30px 20px -30px;
+      border-radius: 0 0 5px 5px;
+    }
+    h1 {
+      font-size: 28px;
+      margin: 0;
+      font-weight: 600;
+    }
+    .tagline {
+      font-size: 16px;
+      margin: 5px 0 0 0;
+      opacity: 0.9;
+    }
+    .contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
+      gap: 15px;
+      margin: 15px 0;
+      font-size: 14px;
     }
-
-    .tag {
-      background: var(--primary);
-      color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      transition: var(--transition);
-    }
-
-    body.dark-mode .tag {
-      background: var(--success);
-    }
-
-    .tag:hover {
-      transform: scale(1.05);
-    }
-
-    /* Skills Section */
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .skill-category {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    body.dark-mode .skill-category {
-      background: #252525;
-    }
-
-    .skill-category:hover {
-      transform: translateY(-5px);
-    }
-
-    .skill-category h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    body.dark-mode .skill-category h3 {
-      color: var(--success);
-    }
-
-    .skill-item {
-      margin-bottom: 1.5rem;
-    }
-
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-    }
-
-    .skill-name {
-      font-weight: 500;
-    }
-
-    .skill-percent {
-      color: var(--gray);
-    }
-
-    .progress-bar {
-      height: 8px;
-      background: var(--light-gray);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    body.dark-mode .progress-bar {
-      background: #333;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: var(--primary);
-      border-radius: 4px;
-      width: 0;
-      transition: width 1.5s ease-in-out;
-    }
-
-    body.dark-mode .progress-fill {
-      background: var(--success);
-    }
-
-    /* Contact Section */
-    .contact-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 1rem;
     }
-
     .contact-icon {
-      width: 50px;
-      height: 50px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
+      margin-right: 5px;
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 20px;
+      color: #2b6cb0;
+      margin-top: 25px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 5px;
+      font-weight: 600;
+    }
+    ul { 
+      padding-left: 20px; 
+      margin: 10px 0; 
+    }
+    li { 
+      margin-bottom: 8px;
+      position: relative;
+    }
+    li:before {
+      content: "•";
+      color: #2b6cb0;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    strong { 
+      color: #2c5282; 
+      font-weight: 600;
+    }
+    .section { 
+      margin-bottom: 20px; 
+    }
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .skill-category {
+      background-color: #ebf4ff;
+      padding: 12px;
+      border-radius: 5px;
+    }
+    .skill-category h3 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: #2b6cb0;
+    }
+    .skill-category ul {
+      padding-left: 15px;
+      margin: 0;
+    }
+    .skill-category li {
+      margin-bottom: 5px;
+    }
+    .experience-item {
+      margin-bottom: 20px;
+    }
+    .job-title {
+      font-weight: 600;
+      color: #2c5282;
+      margin-bottom: 3px;
+    }
+    .company {
+      font-weight: 600;
+    }
+    .date-location {
+      font-size: 14px;
+      color: #4a5568;
+      margin-bottom: 8px;
+    }
+    .highlight {
+      background-color: #ebf8ff;
+      padding: 15px;
+      border-left: 4px solid #3182ce;
+      margin: 15px 0;
+      border-radius: 0 5px 5px 0;
+    }
+    .highlight-title {
+      font-weight: 600;
+      color: #2c5282;
+      margin-bottom: 8px;
+    }
+    .metrics {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 15px 0;
+    }
+    .metric {
+      background-color: #ebf4ff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      min-width: 120px;
+    }
+    .metric-value {
+      font-weight: 600;
+      color: #2b6cb0;
+      font-size: 18px;
+    }
+    .metric-label {
+      font-size: 13px;
+      color: #4a5568;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+      .header {
+        padding: 20px;
+      }
+      .skills-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Vaibhav Kakde</h1>
+    <div class="tagline">Business Analyst | CRM Specialist | Digital Transformation Leader</div>
+    <div class="contact">
+      <div class="contact-item">📧 <a href="mailto:vaibhavkakde17@gmail.com" style="color: white;">vaibhavkakde17@gmail.com</a></div>
+      <div class="contact-item">📞 +91 9425818928</div>
+      <div class="contact-item">🔗 <a href="https://linkedin.com/in/vaibhav-kakde-6a6811b4" target="_blank" style="color: white;">linkedin.com/in/vaibhav-kakde</a></div>
+      <div class="contact-item">📍 Mumbai, India</div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">PROFESSIONAL PROFILE</div>
+    <p>Results-driven <strong>Business Analyst</strong> with <strong>2+ years</strong> of experience at <strong>ICICI Bank</strong>, specializing in <strong>CRM migration</strong>, <strong>digital transformation</strong>, and <strong>process automation</strong>. Proven track record of delivering <strong>50%+ efficiency gains</strong> through strategic implementations of <strong>Microsoft Dynamics 365</strong>, <strong>OCR automation</strong>, and <strong>API integrations</strong>. Adept at bridging business needs with technical solutions while driving <strong>agile project delivery</strong> and <strong>cross-functional collaboration</strong>.</p>
+  </div>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-value">50%</div>
+      <div class="metric-label">Reduction in rejections</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">40%</div>
+      <div class="metric-label">Manpower savings</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">200K+</div>
+      <div class="metric-label">Monthly cases processed</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">500+</div>
+      <div class="metric-label">UAT issues resolved</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>CORE COMPETENCIES</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Business Analysis</h3>
+        <ul>
+          <li>Requirement Gathering & Elicitation</li>
+          <li>User Story & BRD/FSD Development</li>
+          <li>Process Mapping & Optimization</li>
+          <li>Stakeholder Management</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>CRM & Digital Transformation</h3>
+        <ul>
+          <li>Microsoft Dynamics 365</li>
+          <li>Journey Configuration</li>
+          <li>Low-Code Solutions</li>
+          <li>Digital Process Automation</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li>Azure DevOps & CI/CD</li>
+          <li>API Integration & Testing</li>
+          <li>OCR & Document Automation</li>
+          <li>SQL & Data Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Project Delivery</h3>
+        <ul>
+          <li>Agile/Scrum Methodology</li>
+          <li>UAT Coordination</li>
+          <li>QA & Defect Management</li>
+          <li>Cross-functional Leadership</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>PROFESSIONAL EXPERIENCE</h2>
+    
+    <div class="experience-item">
+      <div class="company">ICICI Bank</div>
+      <div class="job-title">Business Analyst / Techno-Functional Consultant</div>
+      <div class="date-location">Jun 2023 - Present | Mumbai, India</div>
+      <ul>
+        <li><strong>Spearheaded CRM migration</strong> to Microsoft Dynamics 365, successfully transitioning <strong>90% of CRM volume</strong> (2,000+ customer journeys) with zero business disruption</li>
+        <li><strong>Designed and implemented automation frameworks</strong> (Master Data, Omnidocs, Bulk Upload) that process <strong>200,000+ cases monthly</strong>, reducing manual effort by 40%</li>
+        <li><strong>Integrated 50+ digital journeys</strong> across ICICI group companies (Securities, HFC, Lombard, Prudential) through API-first approach</li>
+        <li><strong>Reduced document rejection rate by 50%</strong> by implementing OCR validation rules and real-time quality checks</li>
+        <li><strong>Standardized testing processes</strong> with 500+ test cases in Azure DevOps, maintaining <2% defect rate in production</li>
+        <li><strong>Led cross-functional teams</strong> (EY, Microsoft) to deliver complex solutions on aggressive timelines while ensuring regulatory compliance</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>KEY ACHIEVEMENTS</h2>
+    <ul>
+      <li><strong>Process Optimization Champion:</strong> Identified and eliminated 15 redundant steps in customer onboarding, reducing turnaround time from 72 to 24 hours</li>
+      <li><strong>Digital Transformation Leader:</strong> Recognized by ICICI leadership for fastest implementation of bulk upload framework (3 weeks vs. 6 week estimate)</li>
+      <li><strong>Quality Assurance Expert:</strong> Developed comprehensive validation framework that improved first-time approval rate from 65% to 92%</li>
+      <li><strong>Stakeholder Management:</strong> Facilitated 50+ requirement gathering sessions with senior business leaders to align technical solutions with strategic objectives</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>TECHNICAL PROFICIENCIES</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>CRM Platforms</h3>
+        <ul>
+          <li>Microsoft Dynamics 365</li>
+          <li>Salesforce (Basic)</li>
+          <li>Omnidocs</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Development Tools</h3>
+        <ul>
+          <li>Azure DevOps</li>
+          <li>Postman</li>
+          <li>Git</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Data & Analytics</h3>
+        <ul>
+          <li>SQL (Intermediate)</li>
+          <li>Power BI</li>
+          <li>Advanced Excel</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Other Technologies</h3>
+        <ul>
+          <li>OCR Solutions</li>
+          <li>Python (Basic)</li>
+          <li>JIRA/Confluence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>EDUCATION</h2>
+    <div class="experience-item">
+      <div class="company">Visvesvaraya National Institute of Technology (VNIT), Nagpur</div>
+      <div class="job-title">Bachelor of Technology in Metallurgical & Materials Engineering</div>
+      <div class="date-location">2019 - 2023 | CGPA: 8.1/10</div>
+      <ul>
+        <li><strong>Training & Placement Secretary:</strong> Organized 60+ campus drives, improving placement statistics by 25%</li>
+        <li><strong>Academic Achiever:</strong> Consistently ranked among top 15% of department</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>ADDITIONAL INFORMATION</h2>
+    <ul>
+      <li><strong>Certifications:</strong> Microsoft Dynamics 365 Fundamentals, Agile Methodology (ICICI Internal)</li>
+      <li><strong>Languages:</strong> English (Fluent), Hindi (Native), Marathi (Native)</li>
+      <li><strong>Awards:</strong> ICICI Bank Spot Award for Excellence (Q3 2023)</li>
+      <li><strong>Volunteering:</strong> Mentor for junior analysts, STEM outreach programs</li>
+    </ul>
+  </div>
+
+</body>
+</html>
