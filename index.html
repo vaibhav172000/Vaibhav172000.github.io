@@ -1,54 +1,47 @@
-Here's the complete interactive portfolio website with the Query Management Framework section included:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaibhav Kakde | AI-Driven Business Analyst</title>
-    <meta name="description" content="Microsoft Dynamics 365 expert with 50% process optimization at ICICI Bank | 1st Rank HSC (89.34%) | CBSE Topper (9.8 CGPA)">
-    
-    <!-- ATS Optimization Meta -->
-    <meta name="keywords" content="Business Analyst, Dynamics 365, CRM Migration, Process Automation, Azure DevOps, SQL, Python, ICICI Bank, Query Management Framework">
-    
-    <!-- AI-Powered Components -->
+    <meta name="description" content="Microsoft Dynamics 365 expert with process optimization at ICICI Bank | 1st Rank HSC (89.34%) | CBSE (9.8 CGPA)">
+
+    <meta name="keywords" content="Business Analyst, Dynamics 365, CRM Migration, Process Automation, Azure DevOps, SQL, Python, ICICI Bank, Fintech, Digital Transformation">
+
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder@1.3.2"></script>
-    
-    <!-- 3D Animation Library -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <!-- Particles.js -->
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
+
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --bg: #f9fafb;
-            --card: #ffffff;
-            --dark-bg: #111827;
-            --dark-card: #1f2937;
-            --gradient: linear-gradient(135deg, #6366f1 0%, #10b981 100%);
+            --primary: #007bff; /* Modern blue for fintech */
+            --primary-dark: #0056b3;
+            --secondary: #28a745; /* Success green */
+            --accent: #ffc107; /* Warning yellow */
+            --text: #343a40; /* Dark text */
+            --text-light: #6c757d; /* Lighter text */
+            --bg: #f8f9fa; /* Light background */
+            --card: #ffffff; /* White cards */
+            --dark-bg: #343a40; /* Dark background */
+            --dark-card: #495057; /* Dark cards */
+            --gradient: linear-gradient(135deg, #007bff 0%, #28a745 100%); /* Fintech gradient */
             --glass: rgba(255, 255, 255, 0.15);
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
         [data-theme="dark"] {
-            --text: #f3f4f6;
-            --text-light: #9ca3af;
-            --bg: #111827;
-            --card: #1f2937;
-            --glass: rgba(31, 41, 55, 0.5);
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            --text: #f8f9fa;
+            --text-light: #ced4da;
+            --bg: #343a40;
+            --card: #495057;
+            --glass: rgba(73, 80, 87, 0.5);
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
 
         * {
@@ -58,17 +51,32 @@ Here's the complete interactive portfolio website with the Query Management Fram
         }
 
         @font-face {
-            font-family: 'Inter';
-            src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+            font-family: 'Roboto', sans-serif;
+            src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
         }
 
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
             scroll-behavior: smooth;
             overflow-x: hidden;
+        }
+
+        /* Banking Technology Animation (Subtle Lines) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, transparent 0%, rgba(0, 123, 255, 0.05) 50%, transparent 100%),
+                              linear-gradient(to bottom, transparent 0%, rgba(0, 123, 255, 0.05) 50%, transparent 100%);
+            background-size: 20px 20px;
+            z-index: -2;
+            opacity: 0.4;
         }
 
         /* Particle Background */
@@ -78,52 +86,54 @@ Here's the complete interactive portfolio website with the Query Management Fram
             height: 100%;
             top: 0;
             left: 0;
-            z-index: -1;
-            opacity: 0.3;
+            z-index: -3;
+            opacity: 0.2;
         }
 
         /* Glass Morphism Effect */
         .glass {
             background: var(--glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Main Container */
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
             position: relative;
         }
 
         /* Header Section */
         header {
-            padding: 4rem 0 3rem;
+            padding: 5rem 0 4rem;
             text-align: center;
             position: relative;
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.2rem;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.05em;
+            line-height: 1.1;
+            letter-spacing: -0.06em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .tagline {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            font-weight: 300;
-            opacity: 0.9;
+            font-size: 1.6rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-weight: 400;
+            opacity: 0.8;
+            color: var(--text-light);
         }
 
         /* Theme Toggle */
@@ -131,8 +141,8 @@ Here's the complete interactive portfolio website with the Query Management Fram
             position: fixed;
             top: 2rem;
             right: 2rem;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -143,14 +153,19 @@ Here's the complete interactive portfolio website with the Query Management Fram
             box-shadow: var(--shadow);
             border: none;
             color: var(--text);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
         }
 
         /* Navigation */
         nav {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            gap: 2rem;
+            margin-bottom: 4rem;
             flex-wrap: wrap;
         }
 
@@ -158,46 +173,46 @@ Here's the complete interactive portfolio website with the Query Management Fram
             color: var(--text);
             text-decoration: none;
             font-weight: 500;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            border: 1px solid transparent;
         }
 
         nav a:hover, nav a.active {
             background: var(--primary);
             color: white;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            border-color: var(--primary-dark);
         }
 
-        nav a::after {
+        nav a::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
 
-        nav a:hover::after, nav a.active::after {
-            transform: scaleX(1);
-            transform-origin: left;
+        nav a:hover::before, nav a.active::before {
+            opacity: 1;
         }
 
         /* Sections */
         section {
-            padding: 3rem 0;
+            padding: 4rem 0;
             position: relative;
         }
 
         h2 {
-            font-size: 2.25rem;
-            margin-bottom: 2rem;
+            font-size: 2.75rem;
+            margin-bottom: 2.5rem;
             color: var(--primary);
             position: relative;
             display: inline-block;
@@ -207,24 +222,25 @@ Here's the complete interactive portfolio website with the Query Management Fram
         h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -12px;
             left: 0;
-            width: 60px;
-            height: 4px;
+            width: 70px;
+            height: 5px;
             background: var(--primary);
-            border-radius: 2px;
+            border-radius: 2.5px;
         }
 
         /* Cards */
         .card {
             background: var(--card);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            border-left: 5px solid var(--primary);
         }
 
         .card:hover {
@@ -232,62 +248,47 @@ Here's the complete interactive portfolio website with the Query Management Fram
             box-shadow: var(--shadow-lg);
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--primary);
-        }
-
         .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
             color: var(--primary);
             font-weight: 600;
         }
 
         .card .date {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-light);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             display: block;
             font-weight: 500;
         }
 
         .card ul {
-            padding-left: 1.5rem;
+            padding-left: 1.8rem;
+            list-style-type: disc;
         }
 
         .card li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             position: relative;
-        }
-
-        .card li::before {
-            content: '▹';
-            position: absolute;
-            left: -1.5rem;
-            color: var(--primary);
         }
 
         /* Metrics Grid */
         .metrics {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
         }
 
         .metric {
             background: var(--card);
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 2.5rem;
             text-align: center;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            border-top: 4px solid var(--secondary);
         }
 
         .metric:hover {
@@ -296,166 +297,37 @@ Here's the complete interactive portfolio website with the Query Management Fram
         }
 
         .metric-value {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 0.5rem;
-            background: var(--gradient);
+            margin-bottom: 0.75rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
         .metric-label {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--text-light);
             font-weight: 500;
-        }
-
-        /* Query Management Framework */
-        .query-framework {
-            background: var(--card);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 3rem 0;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .query-framework::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
-            z-index: -1;
-        }
-
-        .framework-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .step {
-            background: var(--bg);
-            border-radius: 12px;
-            padding: 1.5rem;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .step:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            box-shadow: var(--shadow);
-        }
-
-        .step-title {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* AI Query Interface */
-        .ai-query {
-            background: var(--card);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 3rem 0;
-            box-shadow: var(--shadow);
-        }
-
-        .query-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .query-input {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            background: var(--bg);
-            color: var(--text);
-            font-size: 1rem;
-            resize: none;
-            min-height: 120px;
-            transition: var(--transition);
-        }
-
-        [data-theme="dark"] .query-input {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .query-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
-        }
-
-        .query-button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            align-self: flex-end;
-        }
-
-        .query-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .query-response {
-            margin-top: 1.5rem;
-            padding: 1.5rem;
-            background: var(--bg);
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-            display: none;
         }
 
         /* Education Section */
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .education-card {
             background: var(--card);
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 2.5rem;
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
+            border-left: 4px solid var(--accent);
         }
 
         .education-card:hover {
@@ -464,41 +336,43 @@ Here's the complete interactive portfolio website with the Query Management Fram
         }
 
         .education-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
             color: var(--primary);
+            font-weight: 600;
         }
 
         .education-card .degree {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--text-light);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .education-card .achievement {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(40, 167, 69, 0.1);
             color: var(--secondary);
-            padding: 0.25rem 0.75rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 9999px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: 500;
             display: inline-block;
-            margin-top: 0.5rem;
+            margin-top: 0.6rem;
         }
 
         /* Extracurricular */
         .extracurricular {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .activity {
             background: var(--card);
-            border-radius: 16px;
-            padding: 1.5rem;
+            border-radius: 12px;
+            padding: 2rem;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            border-bottom: 4px solid var(--primary);
         }
 
         .activity:hover {
@@ -507,49 +381,99 @@ Here's the complete interactive portfolio website with the Query Management Fram
         }
 
         .activity-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
             color: var(--primary);
         }
 
         .activity-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
             color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        #contact .card {
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        #contact strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        #contact a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #contact a:hover {
+            color: var(--primary-dark);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 3rem 0;
+            padding: 4rem 0;
             color: var(--text-light);
             font-size: 0.9rem;
+            border-top: 1px solid var(--text-light);
+            margin-top: 5rem;
         }
 
         /* Animations */
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
 
         .floating {
-            animation: float 6s ease-in-out infinite;
+            animation: float 5s ease-in-out infinite;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
             }
             .tagline {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
+            }
+            nav {
+                gap: 1.5rem;
+                margin-bottom: 3rem;
+            }
+            nav a {
+                padding: 0.8rem 1.6rem;
             }
             .metrics {
                 grid-template-columns: 1fr;
             }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .tagline {
+                font-size: 1.3rem;
+            }
             nav {
                 flex-direction: column;
                 align-items: center;
+            }
+            nav a {
+                width: 80%;
+                margin-bottom: 0.5rem;
+                text-align: center;
             }
         }
 
@@ -560,18 +484,16 @@ Here's the complete interactive portfolio website with the Query Management Fram
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            opacity: 0.1;
+            z-index: -4;
+            opacity: 0.15;
         }
     </style>
 </head>
 <body>
-    <!-- 3D Background Animation -->
     <canvas id="3d-canvas"></canvas>
-    
-    <!-- Particles Background -->
+
     <div id="particles-js"></div>
-    
+
     <div class="container">
         <header>
             <button class="theme-toggle" id="themeToggle">
@@ -587,161 +509,124 @@ Here's the complete interactive portfolio website with the Query Management Fram
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
             </button>
-            
+
             <h1>Vaibhav Kakde</h1>
-            <p class="tagline">Business Analyst | CRM Specialist | Digital Transformation Expert</p>
-            
+            <p class="tagline">AI-Driven Business Analyst | Dynamics 365 & CRM Specialist | Fintech Enthusiast</p>
+
             <nav>
                 <a href="#about" class="active">About</a>
                 <a href="#experience">Experience</a>
-                <a href="#query-framework">Query Framework</a>
                 <a href="#education">Education</a>
                 <a href="#extracurricular">Extracurricular</a>
                 <a href="#contact">Contact</a>
             </nav>
         </header>
-        
+
         <section id="about">
-            <h2>Professional Profile</h2>
+            <h2>Professional Snapshot</h2>
             <div class="card">
-                <p>Results-driven <strong>Business Analyst</strong> with <strong>2+ years</strong> of experience at <strong>ICICI Bank</strong>, specializing in <strong>CRM migration</strong>, <strong>digital transformation</strong>, and <strong>process automation</strong>. Proven track record of delivering <strong>50%+ efficiency gains</strong> through strategic implementations of <strong>Microsoft Dynamics 365</strong>, <strong>OCR automation</strong>, and <strong>API integrations</strong>.</p>
+                <p>A highly motivated and analytical <strong>Business Analyst</strong> with over <strong>2 years</strong> of hands-on experience at <strong>ICICI Bank</strong>, specializing in leveraging technology for <strong>digital transformation</strong> and <strong>CRM optimization</strong>. Proven ability to drive significant efficiency improvements, particularly within <strong>Microsoft Dynamics 365</strong> environments, through strategic automation and process re-engineering. Passionate about the intersection of finance and technology, contributing to the <strong>Fintech revolution</strong>.</p>
             </div>
-            
+
             <div class="metrics">
                 <div class="metric floating">
                     <div class="metric-value">50%</div>
-                    <div class="metric-label">Reduction in rejections</div>
+                    <div class="metric-label">Reduction in Rejections</div>
                 </div>
                 <div class="metric floating" style="animation-delay: 0.5s">
-                    <div class="metric-value">40%</div>
-                    <div class="metric-label">Manpower savings</div>
+                    <div class="metric-value">20%</div>
+                    <div class="metric-label">Manpower Savings</div>
                 </div>
                 <div class="metric floating" style="animation-delay: 1s">
-                    <div class="metric-value">200K+</div>
-                    <div class="metric-label">Monthly cases processed</div>
+                    <div class="metric-value">10,000+</div>
+                    <div class="metric-label">Users Migrated</div>
                 </div>
                 <div class="metric floating" style="animation-delay: 1.5s">
                     <div class="metric-value">500+</div>
-                    <div class="metric-label">UAT issues resolved</div>
+                    <div class="metric-label">User Stories Migrated</div>
                 </div>
             </div>
         </section>
-        
+
         <section id="experience">
-            <h2>Professional Experience</h2>
-            
+            <h2>Professional Journey</h2>
+
             <div class="card">
                 <h3>ICICI Bank</h3>
                 <span class="date">June 2023 - Present | Mumbai, India</span>
                 <p><strong>Business Analyst / Techno-Functional Consultant</strong></p>
                 <ul>
-                    <li>Led migration of <strong>90% CRM volume</strong> (2,000+ customer journeys) to Dynamics 365 with zero business disruption</li>
-                    <li>Designed automation frameworks processing <strong>200,000+ monthly cases</strong>, reducing manual effort by 40%</li>
-                    <li>Integrated <strong>50+ digital journeys</strong> across ICICI group companies through API-first approach</li>
-                    <li>Reduced document rejection rate by <strong>50%</strong> via OCR validation rules and real-time quality checks</li>
-                    <li>Standardized testing with <strong>500+ test cases</strong> in Azure DevOps, maintaining &lt;2% defect rate</li>
+                    <li>Spearheaded the migration of <strong>500+ critical customer journeys</strong> to Microsoft Dynamics 365, ensuring seamless transition and zero business disruption.</li>
+                    <li>Engineered automation frameworks responsible for processing a high volume of transactions, leading to a <strong>20% reduction in manual effort</strong>.</li>
+                    <li>Successfully migrated <strong>50+ digital journeys and 100+ group company journeys</strong> (cross intercrm Microsoft Dynamics through API integration), facilitating enhanced data flow and operational efficiency. For example, enabling seamless case transfer between ICICI Bank and ICICI Securities CRMs via API.</li>
+                    <li>Implemented OCR validation rules and real-time quality checks, resulting in a significant <strong>50% decrease in document rejection rates</strong>.</li>
+                    <li>Standardized testing procedures by developing and executing <strong>500+ test cases</strong> in Azure DevOps, consistently maintaining a defect rate below 2%.</li>
+                    <li><strong>Tracked bugs</strong> across UAT and production environments, diligently monitoring their aging and alignment with original requirements.</li>
+                    <li>Meticulously <strong>tracked rework and rejection rates</strong> for migrated SRS (Software Requirements Specifications), identifying areas for process improvement.</li>
+                    <li>Closely monitored the <strong>migration progress of each SR</strong>, including rollout status and any blocking issues encountered in the legacy CRM system.</li>
+                    <li>Extensively worked on <strong>various frameworks within iCRM</strong>, including: Case Extract, Business Process Description, OCR, Round Robin Assignment Framework, Bulk Upload, Escalation Matrix, User ID Creation, Authentication Framework, C360 Accounts, and Group Company Framework.</li>
                 </ul>
             </div>
         </section>
-        
-        <section id="query-framework">
-            <h2>Query Management Framework</h2>
-            
-            <div class="query-framework glass">
-                <p>Developed an advanced query management system that automates ticket classification, routing, and resolution tracking, reducing response times by 30%.</p>
-                
-                <div class="framework-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3 class="step-title">Intake & Classification</h3>
-                        <p>AI-powered categorization of incoming queries using NLP and sentiment analysis</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3 class="step-title">Automated Routing</h3>
-                        <p>Intelligent assignment to appropriate teams based on query type and complexity</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3 class="step-title">Resolution Tracking</h3>
-                        <p>Real-time monitoring of query status with automated escalation paths</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <h3 class="step-title">Analytics & Reporting</h3>
-                        <p>Dashboard for tracking KPIs like resolution time, customer satisfaction</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="ai-query">
-                <h3>Query Resolution Assistant</h3>
-                <p>Try our AI-powered query resolution system (demo):</p>
-                
-                <div class="query-container">
-                    <textarea class="query-input" placeholder="Describe your query or issue..."></textarea>
-                    <button class="query-button" id="querySubmit">Submit Query</button>
-                    <div class="query-response" id="queryResponse"></div>
-                </div>
-            </div>
-        </section>
-        
+
         <section id="education">
-            <h2>Education</h2>
-            
+            <h2>Academic Background</h2>
+
             <div class="education-grid">
                 <div class="education-card">
-                    <h3>Visvesvaraya National Institute of Technology</h3>
+                    <h3>Visvesvaraya National Institute of Technology (VNIT)</h3>
                     <span class="degree">B.Tech in Metallurgical & Materials Engineering</span>
                     <span class="date">2019 - 2023 | CGPA: 8.1/10</span>
+                    <div class="achievement">
+                        <span style="font-weight: bold; color: var(--primary);">Extracurricular Roles:</span> TnP Secretary, Chess Club Secretary, Tech Fest (Axis) Manager
+                    </div>
                 </div>
-                
+
                 <div class="education-card">
                     <h3>HSC (Maharashtra Board)</h3>
                     <span class="degree">Class 12 - Science Stream</span>
                     <span class="date">2018 | Score: 89.34%</span>
                     <span class="achievement">1st Rank in Class</span>
                 </div>
-                
+
                 <div class="education-card">
                     <h3>CBSE Board</h3>
                     <span class="degree">Class 10</span>
                     <span class="date">2016 | CGPA: 9.8/10</span>
-                    <span class="achievement">School Topper</span>
                 </div>
             </div>
         </section>
-        
+
         <section id="extracurricular">
-            <h2>Extracurricular Activities</h2>
-            
+            <h2>Beyond the Desk</h2>
+
             <div class="extracurricular">
                 <div class="activity">
                     <div class="activity-icon">🎤</div>
-                    <h3 class="activity-title">Open Mic Events</h3>
-                    <p>Organized and hosted college open mic nights, showcasing student talent</p>
+                    <h3 class="activity-title">Open Mic Enthusiast</h3>
+                    <p>Passionate about fostering community through organized and hosted college open mic events.</p>
                 </div>
-                
+
                 <div class="activity">
                     <div class="activity-icon">♟️</div>
-                    <h3 class="activity-title">Chess Enthusiast</h3>
-                    <p>Competitive chess player with tournament experience</p>
+                    <h3 class="activity-title">Strategic Thinker</h3>
+                    <p>An avid chess player, honing analytical and strategic thinking skills through competitive play.</p>
                 </div>
-                
+
                 <div class="activity">
                     <div class="activity-icon">📚</div>
-                    <h3 class="activity-title">Teaching Volunteer</h3>
-                    <p>Conducted free classes for underprivileged students</p>
+                    <h3 class="activity-title">Community Contributor</h3>
+                    <p>Dedicated to giving back through volunteering as a teacher for underprivileged students.</p>
                 </div>
             </div>
         </section>
-        
+
         <section id="contact">
-            <h2>Contact</h2>
-            
+            <h2>Let's Connect</h2>
+
             <div class="card">
-                <p>Let's connect! I'm always open to discussing new opportunities, collaborations, or just chatting about technology and business solutions.</p>
-                
+                <p>I'm eager to explore new opportunities and collaborations within the Fintech and CRM domains. Feel free to reach out!</p>
+
                 <div style="margin-top: 1.5rem;">
                     <p><strong>Email:</strong> <a href="mailto:vaibhavkakde17@gmail.com">vaibhavkakde17@gmail.com</a></p>
                     <p><strong>Phone:</strong> +91 9425818928</p>
@@ -749,10 +634,10 @@ Here's the complete interactive portfolio website with the Query Management Fram
                 </div>
             </div>
         </section>
-        
+
         <footer>
             <p>© 2023 Vaibhav Kakde. All rights reserved.</p>
-            <p style="margin-top: 0.5rem;">Built with ❤️ and modern web technologies</p>
+            <p style="margin-top: 0.5rem;">Crafted with ❤️ and cutting-edge web technologies for the Fintech era.</p>
         </footer>
     </div>
 
@@ -760,93 +645,54 @@ Here's the complete interactive portfolio website with the Query Management Fram
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
-        
+
         // Check for saved theme preference
         const currentTheme = localStorage.getItem('theme') || 'light';
         body.setAttribute('data-theme', currentTheme);
-        
+
         themeToggle.addEventListener('click', () => {
             const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             body.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         });
-        
+
         // Navigation Active State
         const navLinks = document.querySelectorAll('nav a');
-        
+
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
             });
         });
-        
+
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 window.scrollTo({
-                    top: targetElement.offsetTop - 100,
+                    top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
             });
         });
-        
-        // AI Query System (Demo)
-        const querySubmit = document.getElementById('querySubmit');
-        const queryResponse = document.getElementById('queryResponse');
-        
-        querySubmit.addEventListener('click', async () => {
-            const query = document.querySelector('.query-input').value.trim();
-            
-            if (!query) {
-                queryResponse.textContent = "Please enter a query first.";
-                queryResponse.style.display = "block";
-                return;
-            }
-            
-            querySubmit.disabled = true;
-            querySubmit.textContent = "Processing...";
-            
-            // Simulate AI processing
-            setTimeout(() => {
-                const responses = [
-                    "Based on your query about account issues, I recommend checking the account settings in the admin panel first.",
-                    "For technical issues, our system shows similar cases were resolved by clearing cache and cookies.",
-                    "This appears to be a CRM configuration question. Please refer to section 3.2 of the user manual.",
-                    "Our records show this type of query typically takes 2-3 business days to resolve completely."
-                ];
-                
-                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-                
-                queryResponse.innerHTML = `
-                    <strong>AI Response:</strong><br><br>
-                    ${randomResponse}<br><br>
-                    <em>This is a simulated response. In a production environment, this would connect to a real AI model.</em>
-                `;
-                queryResponse.style.display = "block";
-                
-                querySubmit.disabled = false;
-                querySubmit.textContent = "Submit Query";
-            }, 1500);
-        });
-        
+
         // Initialize Particles.js
         particlesJS("particles-js", {
             "particles": {
                 "number": {
-                    "value": 80,
+                    "value": 70,
                     "density": {
                         "enable": true,
-                        "value_area": 800
+                        "value_area": 700
                     }
                 },
                 "color": {
-                    "value": "#6366f1"
+                    "value": "#007bff"
                 },
                 "shape": {
                     "type": "circle",
@@ -856,11 +702,11 @@ Here's the complete interactive portfolio website with the Query Management Fram
                     }
                 },
                 "opacity": {
-                    "value": 0.3,
+                    "value": 0.4,
                     "random": true,
                     "anim": {
                         "enable": true,
-                        "speed": 1,
+                        "speed": 0.8,
                         "opacity_min": 0.1,
                         "sync": false
                     }
@@ -871,14 +717,14 @@ Here's the complete interactive portfolio website with the Query Management Fram
                 },
                 "line_linked": {
                     "enable": true,
-                    "distance": 150,
-                    "color": "#6366f1",
-                    "opacity": 0.2,
-                    "width": 1
+                    "distance": 160,
+                    "color": "#007bff",
+                    "opacity": 0.25,
+                    "width": 1.2
                 },
                 "move": {
                     "enable": true,
-                    "speed": 2,
+                    "speed": 1.5,
                     "direction": "none",
                     "random": true,
                     "straight": false,
@@ -906,52 +752,62 @@ Here's the complete interactive portfolio website with the Query Management Fram
                 },
                 "modes": {
                     "grab": {
-                        "distance": 140,
+                        "distance": 150,
                         "line_linked": {
-                            "opacity": 0.5
+                            "opacity": 0.6
                         }
                     },
                     "push": {
-                        "particles_nb": 4
+                        "particles_nb": 3
                     }
                 }
             },
             "retina_detect": true
         });
-        
+
         // 3D Background Animation
         const canvas = document.getElementById('3d-canvas');
         const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        
+
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
-        
-        // Create floating geometry
-        const geometry = new THREE.IcosahedronGeometry(1, 0);
-        const material = new THREE.MeshBasicMaterial({ 
-            color: 0x6366f1,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.5
-        });
-        
-        const icosahedron = new THREE.Mesh(geometry, material);
-        scene.add(icosahedron);
-        
+        camera.position.z = 7; // Adjusted camera position
+
+        // Create multiple floating shapes (more dynamic)
+        const numShapes = 15;
+        const shapes = [];
+        const shapeColors = [0x007bff, 0x28a745, 0xffc107]; // Fintech color palette
+
+        for (let i = 0; i < numShapes; i++) {
+            const geometry = Math.random() > 0.5 ? new THREE.IcosahedronGeometry(Math.random() * 1 + 0.5, 0) : new THREE.OctahedronGeometry(Math.random() * 1 + 0.5, 0);
+            const material = new THREE.MeshBasicMaterial({
+                color: shapeColors[Math.floor(Math.random() * shapeColors.length)],
+                wireframe: true,
+                transparent: true,
+                opacity: 0.4 + Math.random() * 0.3
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
+            mesh.rotation.set(Math.random() * Math.PI * 2, Math.random() * Math.PI * 2, Math.random() * Math.PI * 2);
+            scene.add(mesh);
+            shapes.push(mesh);
+        }
+
         // Animation loop
         function animate() {
             requestAnimationFrame(animate);
-            
-            icosahedron.rotation.x += 0.005;
-            icosahedron.rotation.y += 0.01;
-            
+
+            shapes.forEach(shape => {
+                shape.rotation.x += 0.008 + Math.random() * 0.005;
+                shape.rotation.y += 0.008 + Math.random() * 0.005;
+            });
+
             renderer.render(scene, camera);
         }
-        
+
         animate();
-        
+
         // Handle window resize
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
@@ -961,46 +817,3 @@ Here's the complete interactive portfolio website with the Query Management Fram
     </script>
 </body>
 </html>
-```
-
-## Key Features of This Ultimate Portfolio:
-
-1. **AI-Powered Query Management Framework**
-   - Complete 4-step visualization of your query resolution system
-   - Interactive demo with simulated AI responses
-   - NLP-powered classification simulation
-
-2. **Cutting-Edge UI/UX**
-   - 3D background animation (Three.js)
-   - Particle.js interactive background
-   - Glass morphism design elements
-   - Dark/light mode toggle with localStorage persistence
-
-3. **Perfect ATS Optimization**
-   - Semantic HTML structure
-   - Keyword-rich content
-   - Proper heading hierarchy
-   - Machine-readable achievements
-
-4. **Your Verified Achievements Highlighted**
-   - Academic excellence (1st Rank HSC 89.34%, CBSE 9.8 CGPA)
-   - ICICI Bank accomplishments with metrics
-   - Extracurricular presented professionally
-
-5. **Interactive Elements**
-   - Animated metric cards
-   - Smooth scrolling navigation
-   - Responsive design for all devices
-   - Hover effects throughout
-
-6. **Technical Sophistication**
-   - TensorFlow.js integration (for potential AI expansion)
-   - Modern CSS with variables and grid
-   - Clean, commented JavaScript
-
-To deploy this:
-1. Save as `index.html`
-2. Upload to your GitHub Pages repository
-3. Enable GitHub Pages in repo settings
-
-Would you like me to add any specific features or make adjustments to better showcase particular aspects of your profile?
